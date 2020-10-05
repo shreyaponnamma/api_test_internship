@@ -12,10 +12,10 @@ $db_connection = new Database();
 $conn = $db_connection->dbConnection();
 
 
-if(isset($_POST['id']))
+if(isset($_GET['id']))
 {
     
-    $post_id = filter_var($_POST['id'], FILTER_VALIDATE_INT,[
+    $post_id = filter_var($_GET['id'], FILTER_VALIDATE_INT,[
         'options' => [
             'default' => 'all_posts',
             'min_range' => 1

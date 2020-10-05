@@ -14,40 +14,21 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-  <form action="" method="POST">
-    <div class="ampstart-input inline-block relative m0 p0 mb3 ">
-        <input type="text" value="" id="ip1" name="id" class="block border-none p0 m0" placeholder="Enter id">
-        <label for="ip1" class="absolute top-0 right-0 bottom-0 left-0" aria-hidden="true">Enter id to delete</label>
-    </div>
+  <a class="ampstart-btn" href="post.php">
+    Insert
+ </a>
+ <br>
+ <a class="ampstart-btn" href="get.php">
+    Read
+ </a>
+ <br>
+ <a class="ampstart-btn" href="put.php">
+    Update
+ </a>
+ <br>
+ <a class="ampstart-btn" href="delete.php">
+    Delete
+ </a>
 
-    <button class="ampstart-btn ampstart-btn-secondary">
-  SUBMIT
-    </button>
-</form>
-    
-
-
-<?php
-
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-$id = $_POST["id"];
-
-$url = 'http://localhost/api_test/del.php';
-
-$data = array(
-    'id' => $id
-);
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
-
-$response = curl_exec($curl);
-curl_close($curl);
-echo $response . PHP_EOL;
-}
-
-?>
-</body>
-</html>
+  </body>
+  </html>
